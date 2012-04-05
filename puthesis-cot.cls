@@ -1426,7 +1426,7 @@
 
 \ifthen{\equal{apacite}{\@@bibstyle}}
   {
-    \usepackage{apacite}
+    \usepackage[natbibapa]{apacite}
     \bibliographystyle{apacite}
   }
 
