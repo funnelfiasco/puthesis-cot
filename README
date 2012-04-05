@@ -7,3 +7,7 @@ This began as a "2012" update of the original `puthesis-cot` that Robert S.
     Cutler created in 2010 based on Mark Senn's `puthesis`. Mark Senn's
     `puthesis` is maintained at the following site:
     https://engineering.purdue.edu/~mark/puthesis/
+
+Because not all LaTeX distributions will come with the latest version of the
+    apacite package, I have included the files required to use the latest
+    version of the package, which is currently 2012-02-25 v6.01.
