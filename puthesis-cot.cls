@@ -1,8 +1,8 @@
 %   ================================================================================
-%   thesis.tex
+%   puthesis-cot.cls
 %   ================================================================================
 %   College of Technology Thesis Template - 2010-05-19 - Robert S. Cutler (rcutler@purdue.edu)
-%     Updated on 2012-02-02 by Jason St. John (jstjohn@purdue.edu)
+%     Updated on 2012-04-05 by Jason St. John (jstjohn@purdue.edu)
 %
 %   Based on the LaTeX thesis template file:
 %       puthesis.cls  2011-11-17  Mark Senn  https://engineering.purdue.edu/~mark
