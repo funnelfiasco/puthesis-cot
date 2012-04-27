@@ -60,6 +60,15 @@
 % The "fixltx2e" package is required for superscripting and subscripting.
 \usepackage{fixltx2e}
 
+% The "enumitem" package is required for proper formatting of the 'description'
+% environment, which is used for the list of definitions.
+\usepackage{enumitem}
+
+% Create an "italicdesc" environment for use in the "Definitions" section. This
+% is provided by the "enumitem" package.
+\newlist{italicdesc}{description}{4}
+\setlist[italicdesc]{font=\normalfont\itshape}
+
 % Per Dr. Mohler, there should be no hyphenation throughout the thesis.
 \usepackage[none]{hyphenat}
 % \raggedright prevents long, non-hyphenated words from bleeding into the margins.
