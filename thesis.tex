@@ -2,7 +2,7 @@
 %   thesis.tex
 %   ================================================================================
 %   College of Technology Thesis Template - 2010-05-06 - Robert S. Cutler (rcutler@purdue.edu)
-%     Updated on 2012-04-03 by Jason St. John (jstjohn@purdue.edu)
+%     Updated on 2012-04-26 by Jason St. John (jstjohn@purdue.edu)
 %     This template has been tested using TeX Live 2012
 %
 %   Based on the LaTeX thesis template file:
@@ -57,6 +57,15 @@
 \usepackage{indentfirst}
 \newcommand{\ip}{\mbox{}\indent}
 
+% The "fixltx2e" package is required for superscripting and subscripting.
+\usepackage{fixltx2e}
+
+% Per Dr. Mohler, there should be no hyphenation throughout the thesis.
+\usepackage[none]{hyphenat}
+% \raggedright prevents long, non-hyphenated words from bleeding into the margins.
+\raggedright
+% \raggedright gets rid of normal paragraph indentation, so we must reset that here.
+\parindent=0.5in
 
 % Define "align" environment used in demo-mathematics.tex.
 % CHANGE NEXT LINE?
@@ -242,7 +251,7 @@
 % I have not implemented this yet.  Mark Senn 2002-06-03
 %%\include{notes}
 
-% A vita is optional for masters theses
+% A vita is optional for master's theses
 % and required for doctoral dissertations.
 % Reference: TM 13.
 % CHANGE NEXT LINE?
