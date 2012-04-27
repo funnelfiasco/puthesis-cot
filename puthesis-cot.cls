@@ -274,7 +274,7 @@
     \stop
   \fi
 }
-\LoadClass[12pt,twoside]{report}[2004/02/16]
+\LoadClass[12pt,twoside]{report}[2007/10/19]
 
 % Got these lines using "grep dotted report.cls" and changed
 % as needed for new \@dottedtocline \vskip parameter.
