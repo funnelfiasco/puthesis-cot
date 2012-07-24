@@ -1,4 +1,6 @@
 %
+%  puthesis-cot.cls  2012-07-24  Jason St. John <jstjohn@purdue.edu>
+%  puthesis-cot.cls  2010-05-19  Robert S. Cutler <rcutler@purdue.edu>
 %  puthesis.cls  2012-07-23  Mark Senn  https://engineering.purdue.edu/~mark
 %
 %  INDEX: Purdue University thesis document class
@@ -14,7 +16,7 @@
 
 \NeedsTeXFormat{LaTeX2e}
 %\ProvidesClass{puthesis}[2012/07/23 Purdue thesis class]
-\ProvidesClass{puthesis-cot}[2012/07/23 Purdue thesis class for the College of Technology]
+\ProvidesClass{puthesis-cot}[2012/07/24 Purdue thesis class for the College of Technology]
 \usepackage{ifthen}
 \newcommand{\ifthen}[2]{\ifthenelse{#1}{#2}{}}
 \usepackage{endnotes}
