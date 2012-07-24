@@ -1,0 +1,26 @@
+#
+# This is the list of contributions people have made to the College of
+# Technology's version of 'puthesis'.
+#
+# 'puthesis' was created by and is maintained by Mark Senn
+# Info: https://engineering.purdue.edu/~mark/puthesis
+#
+
+Robert S. Cutler <rcutler@purdue.edu>
+    * 2010-05-06:
+        Contributions to introduction.tex
+        Contributions to literaturereview.tex
+        Contributions to methodology.tex
+
+    * 2010-05-13:
+        Contributions to front.tex
+
+    * 2010-05-19:
+        Added the 'tech' option to puthesis-cot.cls, for the CoT format
+        Added the 'thesisproposal' option to puthesis-cot.cls
+        Added the 'dissertationproposal' option to puthesis-cot.cls
+        Changes to \renewenvironment for thebibliography
+
+Jason St. John <jstjohn@purdue.edu>
+    * 2012:
+        Check the log on GitHub

@@ -1,21 +1,5 @@
-%   ================================================================================
-%   puthesis-cot.cls
-%   ================================================================================
-%   College of Technology Thesis Template - 2010-05-19 - Robert S. Cutler (rcutler@purdue.edu)
-%     Updated on 2012-04-10 by Jason St. John (jstjohn@purdue.edu)
 %
-%   Based on the LaTeX thesis template file:
-%       puthesis.cls  2011-11-17  Mark Senn  https://engineering.purdue.edu/~mark
-%
-%   Additions include (by Robert S. Cutler):
-%       -- The 'tech'  option to correspond to the College of Technology format.
-%       -- The 'thesisproposal' option.
-%       -- The 'dissertationproposal' option.
-%
-%   Additions are documented in this file.  Original lines are commented out.
-%   ================================================================================
-
-%  puthesis.cls  2011-11-17  Mark Senn  https://engineering.purdue.edu/~mark
+%  puthesis.cls  2012-07-23  Mark Senn  https://engineering.purdue.edu/~mark
 %
 %  INDEX: Purdue University thesis document class
 %
@@ -29,10 +13,8 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-
-%\ProvidesClass{puthesis}[2011/11/17 Purdue thesis class]
-\ProvidesClass{puthesis-cot}[2011/11/17 Purdue thesis class for the College of Technology]
-
+%\ProvidesClass{puthesis}[2012/07/23 Purdue thesis class]
+\ProvidesClass{puthesis-cot}[2012/07/23 Purdue thesis class for the College of Technology]
 \usepackage{ifthen}
 \newcommand{\ifthen}[2]{\ifthenelse{#1}{#2}{}}
 \usepackage{endnotes}
@@ -109,7 +91,6 @@
 \DeclareOption{math}{\set@@dept{math}}
 \DeclareOption{phys}{\set@@dept{phys}}
 \DeclareOption{stat}{\set@@dept{stat}}
-
 \DeclareOption{tech}{\set@@dept{tech}}
 
 \newcommand{\pendnotes}{}
@@ -119,10 +100,9 @@
     \newpage
     \begingroup
 %% !  \renewcommand{\baselinestretch}{0.9}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-   % NOTE: The old CoT template had \parindent set to 0.5in here
+   % NOTE: The old CoT template had \parindent set to 0.5in here, but upstream 'puthesis' uses '0pt'
+   % TODO: Bring examples to Dr. Mohler to see which is correct.
       \setlength{\parindent}{0pt}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
       \setlength{\parskip}{1.5ex}
       \renewcommand{\enotesize}{\normalsize}
       \theendnotes
@@ -135,11 +115,8 @@
 \DeclareOption{dissertation}{\set@@type{dissertation}}
 \DeclareOption{prelim}{\set@@type{prelim}}
 \DeclareOption{thesis}{\set@@type{thesis}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Extra \DeclareOptions added by Robert S. Cutler
 \DeclareOption{thesisproposal}{\set@@type{thesisproposal}}
 \DeclareOption{dissertationproposal}{\set@@type{dissertationproposal}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newboolean{@@uglyheadings}
 \setboolean{@@uglyheadings}{false}
 \DeclareOption{uglyheadings}{\setboolean{@@uglyheadings}{true}}
@@ -234,12 +211,8 @@
       \IW{++++dissertation+++++++++++Ph.D. dissertation}
       \IW{++++prelim+++++++++++++++++Ph.D. Preliminary Report}
       \IW{++++thesis+++++++++++++++++Master's Thesis}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-      % Extra document types added by Robert S. Cutler
       \IW{++++thesisproposal+++++++++Master's Thesis proposal}
       \IW{++++dissertationproposal+++Ph.D. dissertation proposal}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
       \IW{ABORTING...}
       \IW{}
@@ -296,11 +269,11 @@
 %    \IW{                                    \string\\||//}
 %    \IW{                                     \string\\//}
 %    \IW{+----------------------------------------------------------------------------+}
-%    \IW{| This document is using the 2011/11/17 version of puthesis.cls.  It was     |}
+%    \IW{| This document is using the 2012/07/23 version of puthesis.cls.  It was     |}
 %    \IW{| probably read in because you used \string\documentclass[...]{puthesis}.           |}
 %    \IW{|                                                                            |}
 %    \IW{| Only the latest version of this file available from                        |}
-%    \IW{|     https://engineering.purdue.edu/\string~mark/puthesis                               |}
+%    \IW{|     https://engineering.purdue.edu/\string~mark/puthesis                            |}
 %    \IW{| is supported.   Put it in the same subdirectory as your thesis.            |}
 %    \IW{|                                                                            |}
 %    \IW{| This file may be being read from your thesis directory or somewhere else.  |}
@@ -607,8 +580,6 @@
     \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
     \def\@@makeschapterheadspaceb{\vspace*{0.5\baselineskip}}
   }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-  % 'tech' option added by Robert S. Cutler
 \ifthen{\equal{tech}{\@@dept}}
   {
     \def\@@makechapterhead#1{\rm\uppercase{Chapter \thechapter. #1}}
@@ -621,7 +592,6 @@
     \def\@@subsubsectionseries{}
     \setlength{\parindent}{0.5in}
   }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \AtBeginDocument{
@@ -767,12 +737,8 @@
           \ifthen{\equal{dissertation}{\@@type}}{A Dissertation\\}
           \ifthen{\equal{prelim}{\@@type}}{A Preliminary Report\\}
           \ifthen{\equal{thesis}{\@@type}}{A Thesis\\}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-          % These two types were added by Robert S. Cutler
           \ifthen{\equal{thesisproposal}{\@@type}}{A Thesis Proposal\\}
           \ifthen{\equal{dissertationproposal}{\@@type}}{A Dissertation Proposal\\}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
           
           Submitted to the Faculty\\
           of\\
@@ -1095,15 +1061,12 @@
       {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\uppercase{\@chapapp\ \thechapter. #1}}}
     \ifthen{\equal{ce}{\@@dept}}
       {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}\uppercase{#1}}}
+    \ifthen{\equal{me}{\@@dept}}
+      {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter.}\uppercase{#1}}}
     \ifthen{\equal{mse}{\@@dept}}
       {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\uppercase{\@chapapp\ \thechapter. #1}}}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-    % The 'tech' option was added by Robert S. Cutler
     \ifthen{\equal{tech}{\@@dept}}
       {\setboolean{@@unset}{false}\addcontentsline{toc}{chapter}{\protect\uppercase{\@chapapp\ \thechapter. #1}}}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
     \ifthen{\boolean{@@unset}}
       {\addcontentsline{toc}{chapter}{\protect\numberline{\thechapter}#1}}
   \else
@@ -1522,12 +1485,12 @@
       {%
         \settowidth\labelwidth{\@biblabel{#1}}%
         \leftmargin\labelwidth
+        % NOTE: Upstream 'puthesis' uses the below only.
         %\advance\leftmargin\labelsep
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-        % Change made by Robert S. Cutler
+        % NOTE: The next two lines are changes made by Robert S. Cutler
         \advance\leftmargin by 0.5in
     \itemindent -0.5in
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        % TODO: Check with Dr. Mohler to see if the above two lines are necessary.
         \if@openbib
           \advance\leftmargin\bibindent
           \itemindent -\bibindent

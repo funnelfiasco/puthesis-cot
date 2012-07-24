@@ -1,13 +1,6 @@
-%   ================================================================================
-%   thesis.tex
-%   ================================================================================
-%   College of Technology Thesis Template - 2010-05-06 - Robert S. Cutler (rcutler@purdue.edu)
-%     Updated on 2012-04-26 by Jason St. John (jstjohn@purdue.edu)
-%     This template has been tested using TeX Live 2012
 %
-%   Based on the LaTeX thesis template file:
-%       thesis.tex  2011-07-01  Mark Senn  https://engineering.purdue.edu/~mark
-%   ================================================================================
+%  revised  thesis.tex  2012-04-26  Jason St. John <jstjohn@purdue.edu>
+%  thesis.tex  2011-07-01  Mark Senn  https://engineering.purdue.edu/~mark
 %
 %  This is the thesis ``root file''.
 %
@@ -36,36 +29,31 @@
 
 % See https://engineering.purdue.edu/~mark/puthesis/#Options
 % for documentclass options.
-%     'thesisproposal' is a new type added by Robert S. Cutler
-%     'dissertationproposal' is a new type added by Robert S. Cutler
-%     'nochapterblankpages' removes the requirement that chapters must start on odd-numbered pages
-%     'uglyheadings' is the correct style for CoT
+%
+% 'tech' is for all theses and dissertations in the CoT
+% 'thesisproposal' is for M.S. thesis proposals
+% 'dissertationproposal' is for Ph.D. dissertation proposals
+% 'nochapterblankpages' removes the requirement that chapters must start on odd-numbered pages
+% 'uglyheadings' is the correct style for the CoT
+% 'apacite' is the correct style for the CoT
 % CHANGE NEXT LINE?
 \documentclass[tech,thesisproposal,apacite,nochapterblankpages,uglyheadings]{puthesis-cot}
 
-%   ------------------------------------------------------------------------------------------------------------------------
-%   \usepackage{indentfirst}
-%   
-%       Ensures that the first paragraph after a \section or \subsection tag is indented
-%       properly.  (All other paragraphs are automatically indented properly.)
-%
-%   \newcommand{\ip}{\mbox{}\indent}
-%       Unfortunately, the previous package does not work with the first paragraph 
-%       after a \subsubsection tag.  Put the tag \ip after a \subsubsection tag to indent the
-%       first paragraph after the \subsubsection tag.
-%   ------------------------------------------------------------------------------------------------------------------------
+% Ensures that the first paragraph after a \section or \subsection tag is indented
+% properly.  (All other paragraphs are automatically indented properly.)
 \usepackage{indentfirst}
+
+% Unfortunately, the "indentfirst" package does not work with the first paragraph 
+% after a \subsubsection tag.  Put the tag \ip after a \subsubsection tag to indent the
+% first paragraph after the \subsubsection tag.
 \newcommand{\ip}{\mbox{}\indent}
 
 % The "fixltx2e" package is required for superscripting and subscripting.
 \usepackage{fixltx2e}
 
-% The "enumitem" package is required for proper formatting of the 'description'
-% environment, which is used for the list of definitions.
-\usepackage{enumitem}
-
 % Create an "italicdesc" environment for use in the "Definitions" section. This
 % is provided by the "enumitem" package.
+\usepackage{enumitem}
 \newlist{italicdesc}{description}{4}
 \setlist[italicdesc]{font=\normalfont\itshape}
 
@@ -139,8 +127,8 @@
 % Reference: TM 26--27, 30.
 % Only use one \pudegree line.
 % CHANGE NEXT LINE?
-\pudegree{Doctor of Philosophy}{Ph.D.}{May}{2012}
-\pudegree{Master of Science}{M.S.}{May}{2012}
+\pudegree{Doctor of Philosophy}{Ph.D.}{December}{2012}
+\pudegree{Master of Science}{M.S.}{December}{2012}
 
 % Major professor (used in abstract).
 % Use, for example:
