@@ -13,9 +13,9 @@ Usage
 
 There are two options. Most users will want option #1.
 
-*1:* Download and extract the tarball from GitHub (https://github.com/jrstjohn/puthesis-cot/downloads) and begin editing the files as needed.
+**1:** Download and extract the tarball from GitHub (https://github.com/jrstjohn/puthesis-cot/downloads) and begin editing the files as needed.
 
-*2:* If you want to follow the changes to latest version of `puthesis-cot`, clone the GitHub repository and periodically run `git clone`.
+**2:** If you want to follow the latest changes to `puthesis-cot`, clone the GitHub repository and periodically run `git pull`.
 
 **WARNING**: Do NOT edit your thesis in the same directory that you cloned the files. Make a copy of the cloned directory, remove the .git directory, and edit those files. This warning does not apply to option #1.
 
