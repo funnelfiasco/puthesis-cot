@@ -11,11 +11,13 @@ This began as a "2012" update of the original `puthesis-cot` that Robert S. Cutl
 Usage
 -----
 
-Download the tarball from GitHub (https://github.com/jrstjohn/puthesis-cot/downloads) and begin editing the files as needed.
+There are two options. Most users will want option #1.
 
-If you want to follow the latest version of `puthesis-cot`, clone the GitHub repository.
+*1:* Download and extract the tarball from GitHub (https://github.com/jrstjohn/puthesis-cot/downloads) and begin editing the files as needed.
 
-**WARNING**: Do NOT edit your thesis in the same directory that you cloned the files. This warning does not apply if you downloaded and extracted the tarball.
+*2:* If you want to follow the changes to latest version of `puthesis-cot`, clone the GitHub repository and periodically run `git clone`.
+
+**WARNING**: Do NOT edit your thesis in the same directory that you cloned the files. Make a copy of the cloned directory, remove the .git directory, and edit those files. This warning does not apply to option #1.
 
 
 Notes
