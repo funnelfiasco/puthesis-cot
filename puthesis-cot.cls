@@ -1,5 +1,5 @@
 %
-%  puthesis-cot.cls  2012-07-24  Jason St. John <jstjohn@purdue.edu>
+%  puthesis-cot.cls  2012-08-02  Jason St. John <jstjohn@purdue.edu>
 %  puthesis-cot.cls  2010-05-19  Robert S. Cutler <rcutler@purdue.edu>
 %  puthesis.cls  2012-07-30  Mark Senn  https://engineering.purdue.edu/~mark
 %
