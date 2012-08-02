@@ -1,7 +1,7 @@
 %
 %  puthesis-cot.cls  2012-07-24  Jason St. John <jstjohn@purdue.edu>
 %  puthesis-cot.cls  2010-05-19  Robert S. Cutler <rcutler@purdue.edu>
-%  puthesis.cls  2012-07-23  Mark Senn  https://engineering.purdue.edu/~mark
+%  puthesis.cls  2012-07-30  Mark Senn  https://engineering.purdue.edu/~mark
 %
 %  INDEX: Purdue University thesis document class
 %
@@ -15,7 +15,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-%\ProvidesClass{puthesis}[2012/07/23 Purdue thesis class]
+%\ProvidesClass{puthesis}[2012/07/30 Purdue thesis class]
 \ProvidesClass{puthesis-cot}[2012/07/24 Purdue thesis class for the College of Technology]
 \usepackage{ifthen}
 \newcommand{\ifthen}[2]{\ifthenelse{#1}{#2}{}}
@@ -94,7 +94,6 @@
 \DeclareOption{phys}{\set@@dept{phys}}
 \DeclareOption{stat}{\set@@dept{stat}}
 \DeclareOption{tech}{\set@@dept{tech}}
-
 \newcommand{\pendnotes}{}
 \DeclareOption{endnotes}{%
   \let\footnote=\endnote
@@ -271,11 +270,11 @@
 %    \IW{                                    \string\\||//}
 %    \IW{                                     \string\\//}
 %    \IW{+----------------------------------------------------------------------------+}
-%    \IW{| This document is using the 2012/07/23 version of puthesis.cls.  It was     |}
+%    \IW{| This document is using the 2012/07/30 version of puthesis.cls.  It was     |}
 %    \IW{| probably read in because you used \string\documentclass[...]{puthesis}.           |}
 %    \IW{|                                                                            |}
 %    \IW{| Only the latest version of this file available from                        |}
-%    \IW{|     https://engineering.purdue.edu/\string~mark/puthesis                            |}
+%    \IW{|     https://engineering.purdue.edu/\string~mark/puthesis                              |}
 %    \IW{| is supported.   Put it in the same subdirectory as your thesis.            |}
 %    \IW{|                                                                            |}
 %    \IW{| This file may be being read from your thesis directory or somewhere else.  |}
@@ -556,7 +555,6 @@
     \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
     \def\@@makeschapterheadspacea{\vspace*{0.5truein}}
     \def\@@makeschapterheadspaceb{\vspace*{0.5\baselineskip}}
-    \def\@@sectionseries{}
   }
 \ifthen{\equal{math}{\@@dept}}
   {
@@ -594,8 +592,6 @@
     \def\@@subsubsectionseries{}
     \setlength{\parindent}{0.5in}
   }
-
-
 \AtBeginDocument{
   \usepackage{notoccite}
 }
@@ -1394,6 +1390,7 @@
 
 \ifthen{\equal{apacite}{\@@bibstyle}}
   {
+    % The CoT mandates APA 6th ed., which requires option 'natbibapa'
     \usepackage[natbibapa]{apacite}
     \bibliographystyle{apacite}
   }
@@ -1487,7 +1484,7 @@
       {%
         \settowidth\labelwidth{\@biblabel{#1}}%
         \leftmargin\labelwidth
-        % NOTE: Upstream 'puthesis' uses the below only.
+        % NOTE: Upstream 'puthesis' uses the next line only.
         %\advance\leftmargin\labelsep
         % NOTE: The next two lines are changes made by Robert S. Cutler
         \advance\leftmargin by 0.5in
