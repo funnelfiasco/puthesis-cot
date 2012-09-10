@@ -1,7 +1,7 @@
 %
 %  puthesis-cot.cls  2012-08-02  Jason St. John <jstjohn@purdue.edu>
 %  puthesis-cot.cls  2010-05-19  Robert S. Cutler <rcutler@purdue.edu>
-%  puthesis.cls  2012-07-30  Mark Senn  https://engineering.purdue.edu/~mark
+%  puthesis.cls  2012-07-30  Mark Senn  http://engineering.purdue.edu/~mark
 %
 %  INDEX: Purdue University thesis document class
 %
@@ -11,7 +11,7 @@
 %
 %  USAGE:
 %
-%    See https://engineering.purdue.edu/~mark/puthesis for more information.
+%    See http://engineering.purdue.edu/~mark/puthesis for more information.
 %
 
 \NeedsTeXFormat{LaTeX2e}
@@ -197,7 +197,7 @@
       \IW{You must specify an option for your school or department, for example,}
       \IW{++++\string\documentclass[aae]{puthesis}}
       \IW{The available school and department options are defined at}
-      \IW{++++https://engineering.purdue.edu/\string~mark/puthesis/\@@number Options}
+      \IW{++++http://engineering.purdue.edu/\string~mark/puthesis/\@@number Options}
       \IW{ABORTING...}
       \IW{}
       \stop
@@ -241,14 +241,14 @@
     \IW{++++unsrt}
     \IW{++++unsrtnat}
     \IW{See}
-    \IW{++++https://engineering.purdue.edu/\string~mark/puthesis/\@@number Options}
+    \IW{++++http://engineering.purdue.edu/\string~mark/puthesis/\@@number Options}
     \IW{for more details.}
     \IW{ABORTING...}
     \IW{}
     \stop
   \fi
 }
-\LoadClass[12pt,twoside]{report}[2007/10/19]
+\LoadClass[12pt,twoside]{report}[2004/02/16]
 
 % Got these lines using "grep dotted report.cls" and changed
 % as needed for new \@dottedtocline \vskip parameter.
@@ -274,7 +274,7 @@
 %    \IW{| probably read in because you used \string\documentclass[...]{puthesis}.           |}
 %    \IW{|                                                                            |}
 %    \IW{| Only the latest version of this file available from                        |}
-%    \IW{|     https://engineering.purdue.edu/\string~mark/puthesis                              |}
+%    \IW{|     http://engineering.purdue.edu/\string~mark/puthesis                               |}
 %    \IW{| is supported.   Put it in the same subdirectory as your thesis.            |}
 %    \IW{|                                                                            |}
 %    \IW{| This file may be being read from your thesis directory or somewhere else.  |}
@@ -695,7 +695,7 @@
         \IW{You must specify which campus your degree is from, for example,}
         \IW{\space\space\space\space\string\campus{West Lafayette}}
         \IW{See}
-        \IW{\space\space\space\space https://engineering.purdue.edu/\string~mark/puthesis/\@@number campus}
+        \IW{\space\space\space\space http://engineering.purdue.edu/\string~mark/puthesis/\@@number campus}
         \IW{for the valid choices.}
         \IW{ABORTING...}
         \IW{}
@@ -707,7 +707,7 @@
         \IW{\space\space\space\space\string\campus{\@@Campus@Input}}
         \IW{command is not valid.}
         \IW{See}
-        \IW{\space\space\space\space https://engineering.purdue.edu/\string~mark/puthesis/\@@number campus}
+        \IW{\space\space\space\space http://engineering.purdue.edu/\string~mark/puthesis/\@@number campus}
         \IW{for the valid choices.}
         \IW{ABORTING...}
         \IW{}
