@@ -1,7 +1,7 @@
 %
-%  puthesis-cot.cls  2012-09-10  Jason St. John <jstjohn@purdue.edu>
+%  puthesis-cot.cls  2013-04-10  Jason St. John <jstjohn@purdue.edu>
 %  puthesis-cot.cls  2010-05-19  Robert S. Cutler <rcutler@purdue.edu>
-%  puthesis.cls  2012-07-30  Mark Senn  http://engineering.purdue.edu/~mark
+%  puthesis.cls  2012-12-01  Mark Senn  http://engineering.purdue.edu/~mark
 %
 %  INDEX: Purdue University thesis document class
 %
@@ -15,7 +15,7 @@
 %
 
 \NeedsTeXFormat{LaTeX2e}
-%\ProvidesClass{puthesis}[2012/07/30 Purdue thesis class]
+%\ProvidesClass{puthesis}[2012/11/30 Purdue thesis class]
 \ProvidesClass{puthesis-cot}[2012/07/24 Purdue thesis class for the College of Technology]
 \usepackage{ifthen}
 \newcommand{\ifthen}[2]{\ifthenelse{#1}{#2}{}}
@@ -83,6 +83,7 @@
 \DeclareOption{ece}{\set@@dept{ece}}
 \DeclareOption{hsci}{\set@@dept{hsci}}
 \DeclareOption{ie}{\set@@dept{ie}}
+\DeclareOption{ling}{\set@@dept{ling}}
 \DeclareOption{mgmt}{\set@@dept{mgmt}}
 \DeclareOption{mse}{\set@@dept{mse}}
 \DeclareOption{me}{\set@@dept{me}}
@@ -101,8 +102,8 @@
     \newpage
     \begingroup
 %% !  \renewcommand{\baselinestretch}{0.9}
-   % NOTE: The old CoT template had \parindent set to 0.5in here, but upstream 'puthesis' uses '0pt'
-   % TODO: Bring examples to Dr. Mohler to see which is correct.
+      % NOTE: The old CoT template had \parindent set to 0.5in here, but upstream 'puthesis' uses '0pt'
+      % TODO: Bring examples to Dr. Mohler to see which is correct.
       \setlength{\parindent}{0pt}
       \setlength{\parskip}{1.5ex}
       \renewcommand{\enotesize}{\normalsize}
@@ -124,6 +125,7 @@
 \newboolean{@@unset}
 \newcommand{\@@optionbibstyle}{}
 \newcommand{\set@@optionbibstyle}[1]{\renewcommand{\@@optionbibstyle}{#1}\addtocounter{@@tcount}{1}}
+\DeclareOption{abbrv}{\set@@optionbibstyle{abbrv}}
 \DeclareOption{abbrvnat}{\set@@optionbibstyle{abbrvnat}}
 \DeclareOption{aer}{\set@@optionbibstyle{aer}}
 \DeclareOption{agsm}{\set@@optionbibstyle{agsm}}
@@ -139,6 +141,7 @@
 \DeclareOption{jfm}{\set@@optionbibstyle{jfm}}
 \DeclareOption{jfm2}{\set@@optionbibstyle{jfm2}}
 \DeclareOption{kluwer}{\set@@optionbibstyle{kluwer}}
+\DeclareOption{phaip}{\set@@optionbibstyle{phaip}}
 \DeclareOption{plain}{\set@@optionbibstyle{plain}}
 \DeclareOption{plainnat}{\set@@optionbibstyle{plainnat}}
 \DeclareOption{unsrt}{\set@@optionbibstyle{unsrt}}
@@ -222,6 +225,7 @@
   \ifnum\value{@@tcount}>1
     \IW{}
     \IW{You may specify only one citation/bibliography style from the below list:}
+    \IW{++++abbrv}
     \IW{++++abbrvnat}
     \IW{++++agsm}
     \IW{++++aip}
@@ -236,6 +240,7 @@
     \IW{++++jfm}
     \IW{++++jfm2}
     \IW{++++kluwer}
+    \IW{++++phaip}
     \IW{++++plain}
     \IW{++++plainnat}
     \IW{++++unsrt}
@@ -270,7 +275,7 @@
 %    \IW{                                    \string\\||//}
 %    \IW{                                     \string\\//}
 %    \IW{+----------------------------------------------------------------------------+}
-%    \IW{| This document is using the 2012/07/30 version of puthesis.cls.  It was     |}
+%    \IW{| This document is using the 2012/11/30 version of puthesis.cls.  It was     |}
 %    \IW{| probably read in because you used \string\documentclass[...]{puthesis}.           |}
 %    \IW{|                                                                            |}
 %    \IW{| Only the latest version of this file available from                        |}
@@ -453,6 +458,23 @@
     \def\@@makeschapterheadspaceb{\vspace*{0.5\baselineskip}}
     \nochapterblankpages
   }
+\ifthen{\equal{ling}{\@@dept}}
+{
+    \def\@@deptbibstyle{unified}
+    \renewcommand*\l@section{\@dottedtocline{1}{\bigtocskip}{1.5em}{2.3em}}
+    \renewcommand*\l@subsection{\@dottedtocline{2}{\bigtocskip}{3.8em}{3.2em}}
+    \renewcommand*\l@subsubsection{\@dottedtocline{3}{\bigtocskip}{7.0em}{4.1em}}
+    \renewcommand*\l@paragraph{\@dottedtocline{4}{\bigtocskip}{10em}{5em}}
+    \renewcommand*\l@subparagraph{\@dottedtocline{5}{\bigtocskip}{12em}{6em}}
+    \renewcommand*\l@figure{\@dottedtocline{1}{\bigtocskip}{1.5em}{2.3em}}
+    \def\@@makechapterhead#1{{\thechapter. \uppercase{#1}}}
+    \def\@@makechapterheadspacea{\vspace*{0.6truein}}  % by trial and error
+    \def\@@makechapterheadspaceb{\vspace{0.5\baselineskip}}
+    \def\@@makeschapterhead#1{{\uppercase{#1}}}
+    \def\@@makeschapterheadspacea{\vspace*{0.6truein}}  % by trial and error
+    \def\@@makeschapterheadspaceb{\vspace*{0.5\baselineskip}}
+    \nochapterblankpages
+}
 \ifthen{\equal{mgmt}{\@@dept}}
   {
     \def\@@makechapterhead#1{\large\bf\thechapter. #1}
@@ -737,7 +759,6 @@
           \ifthen{\equal{thesis}{\@@type}}{A Thesis\\}
           \ifthen{\equal{thesisproposal}{\@@type}}{A Thesis Proposal\\}
           \ifthen{\equal{dissertationproposal}{\@@type}}{A Dissertation Proposal\\}
-          
           Submitted to the Faculty\\
           of\\
           Purdue University\\
@@ -1029,7 +1050,9 @@
           \renewcommand*{\\}{}%
           \@@Title.
         }
-        \@@MajorProf\ifthen{\equal{me}{\@@dept}}{, School of Mechanical Engineering}.
+        \ifthenelse{\isundefined{\@@OverrideMajorProf}}
+          {\@@MajorProf\ifthen{\equal{me}{\@@dept}}{, School of Mechanical Engineering}.}
+          {\@@OverrideMajorProf}
       }
       \vspace*{\baselineskip}
       \par
@@ -1210,7 +1233,7 @@
       \refstepcounter{subsubsection}
       \vspace{36truept}
       \subsubsectionmark{#1}
-      \noindent \undertext{\thesubsubsection. #1}\newline\nopagebreak
+      \noindent \undertext{\thesubsubsection\ #1}\newline\nopagebreak
       \addcontentsline{toc}{subsubsection}{\protect\numberline{\csname thesubsubsection\endcsname}#1}
       \nopagebreak
     }
@@ -1347,6 +1370,12 @@
   {\newcommand{\@@bibstyle}{\@@deptbibstyle}}
   {\newcommand{\@@bibstyle}{\@@optionbibstyle}}
 
+\ifthen{\equal{abbrv}{\@@bibstyle}}
+  {
+    \renewcommand{\bibname}{{\normalsize\rm LIST OF REFERENCES}}
+    \bibliographystyle{abbrv}
+  }
+
 \ifthen{\equal{abbrvnat}{\@@bibstyle}}
   {
     \usepackage[sort]{natbib}
@@ -1443,6 +1472,11 @@
     \bibliographystyle{kluwer}
   }
 
+\ifthen{\equal{phaip}{\@@bibstyle}}
+  {
+    \bibliographystyle{phaip}
+  }
+
 \ifthen{\equal{pumeunsrt}{\@@bibstyle}}
   {
     \usepackage{cite}
@@ -1461,6 +1495,14 @@
     \renewcommand{\bibname}{{\normalsize\rm LIST OF REFERENCES}}
     \bibliographystyle{plainnat}
   }
+
+\ifthen{\equal{unified}{\@@bibstyle}}
+{
+    \usepackage{natbib}
+    \bibliographystyle{unified}
+    \def\@@bibname{{\normalsize\rm REFERENCES}}
+    \nochapterblankpages
+}
 
 \ifthen{\equal{unsrt}{\@@bibstyle}}
   {
@@ -1488,7 +1530,7 @@
         %\advance\leftmargin\labelsep
         % NOTE: The next two lines are changes made by Robert S. Cutler
         \advance\leftmargin by 0.5in
-    \itemindent -0.5in
+        \itemindent -0.5in
         % TODO: Check with Dr. Mohler to see if the above two lines are necessary.
         \if@openbib
           \advance\leftmargin\bibindent
