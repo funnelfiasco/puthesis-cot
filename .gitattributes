@@ -1,0 +1,4 @@
+*.cls text diff=tex
+*.sty text diff=tex
+*.tex text diff=tex
+*.bib text diff=bibtex
